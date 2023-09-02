@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="question">
+      <h1>Basic Project of JavaScript</h1>
+
+      <p>
+        Question (1): If the given input is an array of numbers, return the sum
+        of all the positives ones. If the array is empty or there aren't any
+        positive numbers, return 0.
+
+        <span style="display: block"
+          >Hint: const input = [ 1, -4, 12, 0, -3, 29, -150];</span
+        >
+      </p>
+      <code>
+        <pre>
+const input = [1, -4, 12, 0, -3, 29, -150] 
+function positiveSumNumber(){
+let sum = 0;
+for(let i = 0; i < input.length; i++){
+if(input[i] > 0 ){
+sum += input[i]
+}
+}
+return sum;
+}
+const finalResult = positiveSumNumber();
+console.log(finalResult);
+        </pre>
+      </code>
+      <h3>Output:</h3>
+      <h1 id="demo"></h1>
+    </div>
+    <div class="question">
+      <p>
+        Question 2 : Calculate the mean and median values of the number elements
+        from the input array.
+        <span style="display: block"
+          >Hint: const input = [12, 46, 32, 64];</span
+        >
+      </p>
+      <code>
+        <h3>Mean:</h3>
+        <pre style="display: block">
+<div>
+    const input1 = [12,46,32,64];
+function mean(){
+let sum = 0;
+for(let i = 0; i < input1.length; i++){
+sum += input1[i];
+}
+return sum / input1.length;
+}
+console.log(mean())
+</div>
+
+
+<div class="take">
+    
+<h3>Median:</h3>
+function median(){
+const shorting = input1.sort((a,b) => a - b);
+const middle = Math.floor(shorting.length / 2);
+if(shorting.length % 2 === 0){
+const middle1 = shorting[middle - 1];
+const middle2 = shorting[middle];
+return (middle1 + middle2) / 2
+}
+}
+console.log(median());
+</div>
+</pre>
+      </code>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        "
+      >
+        <h1 id="demo2"></h1>
+        <h1 id="demo3"></h1>
+      </div>
+    </div>
+    <div class="question">
+      <p>
+        The given input is a string of multiple words with a single space
+        between each of them. Abbreviate the name and return the name initials.
+        <span style="display: block"
+          >const input = 'George Raymond Richard Martin';</span
+        >
+      </p>
+      <code>
+        <pre>
+const input3 = 'George Raymond Richard Martin';
+function abbrName(name){
+const character = name.split(' ');
+let initial = '';
+for(let i = 0; i < character.length; i++){
+initial += character[i][0].toUpperCase();
+}
+return initial;
+}
+const initial = abbrName(input3);
+console.log(initial);
+        </pre>
+      </code>
+      <h1 id="demo4"></h1>
+    </div>
+    <div class="question">
+      <p>
+        Find the difference in age between the oldest and youngest family
+        members, and return their respective ages and the age difference.
+        <span style="display: block">
+          Hint: const input = [ { name: 'John', age: 13 }, { name: 'Mark', age:
+          56, }, { name: 'Rachel', age: 45, }, { name: 'Nate', age: 67, }, {
+          name: 'Jeniffer', age: 65, } ];
+        </span>
+      </p>
+      <code>
+        <pre>
+          const familyAge = [
+          {
+            name: "John",
+            age: 13,
+          },
+          {
+            name: "Mark",
+            age: 56,
+          },
+          {
+            name: "Rachel",
+            age: 45,
+          },
+          {
+            name: "Nate",
+            age: 67,
+          },
+          {
+            name: "Jennifer",
+            age: 65,
+          },
+          ]
+let youngestFamily = familyAge[0];
+let oldestFamily = familyAge[0];
+for(let i = 0; i < familyAge.length; i++){
+if(familyAge[i].age < youngestFamily.age){
+youngestFamily = familyAge[i];
+}
+if(familyAge[i].age > oldestFamily.age){
+oldestFamily = familyAge[i];
+}
+}
+const ageDifference = oldestFamily.age - youngestFamily.age;
+console.log(youngestFamily.age);
+console.log(oldestFamily.age);
+console.log(ageDifference);
+        </pre>
+      </code>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        "
+      >
+        <h1 id="para"></h1>
+        <h1 id="para1"></h1>
+        <h1 id="para2"></h1>
+      </div>
+    </div>
+    <div class="question">
+      <p>
+        If the given input is a number, you should return the factorial of that
+        number. The factorial of a natural number n is the product of the
+        positive integers less than or equal to n. So, 2! = 2, 3! = 6, 4! = 24
+        and so on.
+        <span style="display: block"> Hint: const data = 6; </span>
+      </p>
+      <code>
+        <pre>
+const data = 6;
+const process = value => (value <= 1 ? 1 : value * process(value - 1));
+console.log(process(data));
+        </pre>
+      </code>
+      <h1 id="para3"></h1>
+    </div>
+    <div class="question">
+      <p>
+        Count the occurrences of distinct elements in the given 2D array. The
+        given input is an array, the elements of which are arrays of strings.
+        The result is an object whose property names are the values from the
+        arrays and their value is the number of their occurrences.
+        <span style="display: block">
+          Hint: const input = [ ['a', 'b', 'c'], ['c', 'd', 'f'], ['d', 'f',
+          'g'], ];
+        </span>
+      </p>
+      <code>
+        <pre>
+          const _2D = [
+  ["a", "b", "c"],
+  ["c", "d", "f"],
+  ["d", "f", "g"],
+];
+const FinalReport = {};
+for (let r = 0; r < _2D.length; r++){
+  for (let c = 0; c < _2D[r].length; c++){
+    const elements = _2D[r][c];
+    if(FinalReport[elements]){
+      FinalReport[elements]++
+    }else{
+      FinalReport[elements]="1"
+    }
+  }
+}
+console.log(FinalReport);
+        </pre>
+      </code>
+      <h1 id="demo7"></h1>
+    </div>
+    <!-- Exercise of ES6 -->
+    <div class="question">
+      <h1>ES6 Tasks or Exercise</h1>
+      <p>
+        Exercise 1: print the name of each company using forEach
+        <span style="display: block; margin-top: 20px"
+          >const companies = [ { name: "Company One", category: "Finance",
+          start: 1981, end: 2004 }, { name: "Company Two", category: "Retail",
+          start: 1992, end: 2008 }, { name: "Company Three", category: "Auto",
+          start: 1999, end: 2007 }, { name: "Company Four", category: "Retail",
+          start: 1989, end: 2010 }, { name: "Company Five", category:
+          "Technology", start: 2009, end: 2014 }, { name: "Company Six",
+          category: "Finance", start: 1987, end: 2010 }, { name: "Company
+          Seven", category: "Auto", start: 1986, end: 1996 }, { name: "Company
+          Eight", category: "Technology", start: 2011, end: 2016 }, { name:
+          "Company Nine", category: "Retail", start: 1981, end: 1989 } ];</span
+        >
+      </p>
+      <code>
+        <pre>
+          companies.forEach((company) => {
+            console.log(company.name);
+          })
+
+        </pre>
+      </code>
+      <h1 id="es1" style="list-style-type: none"></h1>
+    </div>
+    <div class="question">
+      <p>Exercise 2: print the name of each company that started after 1987</p>
+      <code>
+        <pre>
+        companies.forEach((company)=>{
+          if(company.start > 1987){
+            console.log(company.name)
+          }
+        })
+        </pre>
+      </code>
+      <h1 id="es2" style="list-style-type: none"></h1>
+    </div>
+    <div class="question">
+      <p>
+        Exercise 3: get only the companies that have category Retail, increment
+        their start by 1 and append in the DOM a div that has the name, the
+        category, the start and the end in paragraphs elements
+
+        <span style="display: block"
+          >const companies = [ { name: "Company One", category: "Finance",
+          start: 1981, end: 2004 }, { name: "Company Two", category: "Retail",
+          start: 1992, end: 2008 }, { name: "Company Three", category: "Auto",
+          start: 1999, end: 2007 }, { name: "Company Four", category: "Retail",
+          start: 1989, end: 2010 }, { name: "Company Five", category:
+          "Technology", start: 2009, end: 2014 }, { name: "Company Six",
+          category: "Finance", start: 1987, end: 2010 }, { name: "Company
+          Seven", category: "Auto", start: 1986, end: 1996 }, { name: "Company
+          Eight", category: "Technology", start: 2011, end: 2016 }, { name:
+          "Company Nine", category: "Retail", start: 1981, end: 1989 } ];</span
+        >
+      </p>
+      <code>
+        <pre>
+          companies.filter(company => company.categort === "Retail").map(company => {
+            company.start += 1;
+            return `Name: ${company3.name}, Category: ${company3.category}, Start: ${company3.start}, End: ${company3.end}`
+          }).forEach((companyAll)=>{
+            document.getElementById('companyDetails').innerHTML += companyAll;
+          })
+        </pre>
+      </code>
+      <h3>Output:</h3>
+      <div
+        id="companyDetails"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      ></div>
+    </div>
+    <div class="question">
+      <p>
+        Exercise 4: sort the companies based on their end date in asceding order
+      </p>
+      <code>
+        <pre>
+        const sortingCompany = companies4.sort((a, b) => a.end - b.end);
+console.log(sortingCompany);
+let test = "";
+sortingCompany.forEach((text) => {
+  test += `${text.end} , `;
+});
+document.getElementById("ex4").innerHTML = test;
+</pre
+        >
+      </code>
+      <h3>Output:</h3>
+      <h3 id="ex4"></h3>
+    </div>
+    <div class="question">
+      <p>
+        Exercise 5: sort the ages array in desceding order
+        <span style="display: block"
+          >Hint: const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45,
+          25, 64, 32];</span
+        >
+      </p>
+      <code>
+        <pre>
+          const sortingAge = ages.sort((a, b) => b - a);
+console.log(sortingAge)
+        </pre>
+      </code>
+      <h3>Output:</h3>
+      <h3 id="ex5"></h3>
+    </div>
+    <div class="question">
+      <p>Exercise 6: print the sum if you add all the ages using reduce</p>
+      <code>
+        <pre>
+          function sumOfAge() {
+            let sum1 = 0;
+            for (let i = 0; i < ages2.length; i++) {
+              sum1 += ages2[i];
+            }
+            return sum1;
+          }
+          const finalSum = sumOfAge();
+          console.log(finalSum);
+        </pre>
+      </code>
+      <h1 id="ex6"></h1>
+    </div>
+    <div class="question">
+      <p>
+        Exercise 8: create a funcion that takes an unkown number of arguments
+        that are numbers and return their sum;
+      </p>
+      <code>
+        <pre>
+          function sumNumber() {
+            let sum = 0;
+            for (let i = 0; i < arguments.length; i++) {
+              if (typeof arguments[i] === "number") {
+                sum += arguments[i];
+              }
+            }
+            return sum;
+          }
+          const resutl = sumNumber(33, 12, 20, 16, 5);
+          console.log(resutl);
+          
+        </pre>
+      </code>
+      <h3>Output: 86</h3>
+    </div>
+    <div class="question">
+      <p>
+        Exercise 11: write a function that everytime you call it, it returns a
+        number that increments starting from 0
+      </p>
+      <code>
+        <pre>
+  function counter(){
+    let count =0;
+    return function(){
+      return count++;
+    }
+  }
+  const increase = counter();
+  console.log(increase());
+console.log(increase());
+console.log(increase());
+</pre
+        >
+      </code>
+      <h1>Output: 0 , 1 , 2</h1>
+    </div>
+    <div class="question">
+      <p>
+        Exercise 12: create a function that distructures the query parameters of
+        a url and adds them in an object as key value pairs and then returns the
+        object
+      </p>
+      <code>
+        <pre>
+function parseQueryParameters(url) {
+return Object.fromEntries(new URL(url).searchParams);
+}
+const url = "https://example.com/path?name=Costas&age=30&city=Lalaland 12";
+const queryParams = parseQueryParameters(url);
+console.log(queryParams);
+</pre
+        >
+      </code>
+      <h3>
+        Output : name: 'Costas', age: '30', city: 'Lalaland 12'} age : "30" city
+        : "Lalaland 12" name : "Costas"
+      </h3>
+    </div>
+    <div class="question">
+      <p>
+        Write a JavaScript program to check if the provided argument is a valid
+        JSON.
+      </p>
+      <code>
+        <pre>
+        function isValidJSON(text) {
+          try {
+            JSON.parse(text);
+            return true;
+          } catch {
+            return false;
+          }
+        }
+        const jsonString =
+          '[{"name":"Company One","category":"Finance","start":1981,"end":2004},{"name":"Company Two","category":"Retail","start":1992,"end":2008}]';
+        console.log(isValidJSON(jsonString) ? "Valid JSON" : "Not valid JSON");
+        
+      </pre
+        >
+      </code>
+      <h3>Output: Valid JSON</h3>
+    </div>
+    <div class="question">
+      <p>
+        Write a JavaScript program to check if a given string is upper case or
+        not
+      </p>
+      <code>
+        <pre>
+        const isUpperCase = (str) => str === str.toUpperCase();
+const text1 = "HELLO";
+const text2 = "Hello";
+console.log(isUpperCase(text1));
+console.log(isUpperCase(text2));
+
+      </pre
+        >
+      </code>
+      <h3>Output: true, false</h3>
+    </div>
+    <div class="question">
+      <p>
+        Write a JavaScript program that will return true if the specified value
+        is undefined, false otherwise
+      </p>
+      <code>
+        <pre>
+        function isUndefined(value) {
+          return value === undefined;
+        }
+        const testValue1 = undefined;
+        const testValue2 = "Hello";
+        console.log(isUndefined(testValue1));
+        console.log(isUndefined(testValue2));
+        
+      </pre
+        >
+      </code>
+      <h3>Output: true, false</h3>
+    </div>
+    <div class="question">
+      <p>
+        Write a JavaScript program that will return true if the specified value
+        is null, false otherwise.
+      </p>
+      <code>
+        <pre>
+        function isNull(value) {
+          return value === null;
+        }
+        const testValue12 = null;
+        const testValue22 = "Hello";
+        console.log(isNull(testValue12));
+        console.log(isNull(testValue22));
+        
+      </pre
+        >
+      </code>
+      <h3>Output: true, false</h3>
+    </div>
+
+    <script src="./Basic/Task1 and Task2/project.js"></script>
+    <script src="./Basic/Task3/project1.js"></script>
+    <script src="./Basic/Task4/project2.js"></script>
+    <script src="./Basic/Task5/project3.js"></script>
+    <script src="./Basic/Task6/project4.js"></script>
+    <script src="./ES6/Ex1/exercise1.js"></script>
+    <script src="/ES6/Ex2/exercise2.js"></script>
+    <script src="./ES6/Ex3/exercise.js"></script>
+    <script src="./ES6/Ex4/exercise5.js"></script>
+    <script src="./ES6/Ex5/exercise6.js"></script>
+    <script src="./ES6/Ex6/exercise6.js"></script>
+    <script src="./ES6/Ex7/exercise7.js"></script>
+    <script src="./ES6/Ex8/exercise8.js"></script>
+    <script src="./ES6/Ex10/exercise10.js"></script>
+    <script src="./ES6/Ex11/exercise11.js"></script>
+    <script src="./ES6/Ex12/exercise12.js"></script>
+    <script src="./Json/task1/task1.js"></script>
+    <script src="./Json/task2/task2.js"></script>
+    <script src="./Json/task3/task3.js"></script>
+    <script src="./Json/task4/taks4.js"></script>
+  </body>
+</html>
